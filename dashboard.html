@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Mobile Shop Dashboard</title>
+  </head>
+
+  <body class="bg-[#f3f4f6]">
+    <div class="flex min-h-screen">
+      <!-- SIDEBAR -->
+      <aside
+        id="sidebar"
+        class="fixed lg:static top-0 left-0 z-50 w-[230px] h-screen bg-[#071225] text-white transform -translate-x-full lg:translate-x-0 transition-all duration-300"
+      >
+        <!-- LOGO -->
+        <div
+          class="h-[56px] border-b border-[#1d2b45] flex items-center px-4 font-bold text-[22px] justify-between gap-4"
+        >
+          📱 MobileShop
+          <div id="btn" class="block lg:hidden text-gray-400">
+            X
+          </div>
+        </div>
+
+        <!-- MENU -->
+        <div class="px-4 pt-6">
+          <p class="text-[11px] text-gray-400 mb-4 font-semibold">MANAGEMENT</p>
+
+          <div class="space-y-2">
+            <a
+              href="#"
+              class="block bg-gradient-to-r from-pink-500 to-purple-500 py-3 px-4 rounded-lg text-[15px] font-medium"
+            >
+              Dashboard
+            </a>
+
+            <a
+              href="#"
+              class="block py-3 px-4 rounded-lg hover:bg-[#18253d] text-[15px]"
+            >
+              Products
+            </a>
+
+            <a
+              href="#"
+              class="block py-3 px-4 rounded-lg hover:bg-[#18253d] text-[15px]"
+            >
+              Orders
+            </a>
+
+            <a
+              href="#"
+              class="block py-3 px-4 rounded-lg hover:bg-[#18253d] text-[15px]"
+            >
+              Users
+            </a>
+          </div>
+        </div>
+
+        <!-- LOGOUT -->
+        <div class="absolute bottom-0 w-full p-4 border-t border-[#1d2b45]">
+          <button
+            class="w-full bg-[#18253d] py-3 rounded-lg hover:bg-[#24324f] transition"
+          >
+            Logout
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="flex-1 overflow-y-auto">
+        <!-- TOPBAR -->
+        <div
+          class="h-[56px] bg-white border-b flex items-center justify-between px-4 lg:px-8"
+        >
+          <div class="flex items-center gap-4">
+            <!-- MOBILE MENU -->
+            <button id="menuBtn" class="lg:hidden text-2xl font-bold">
+              ☰
+            </button>
+
+            <h1 class="text-[24px] font-semibold text-gray-800">Dashboard</h1>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-4 lg:p-8">
+          <!-- CARDS -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+            <!-- CARD -->
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-[55px] h-[55px] rounded-xl bg-green-100 flex items-center justify-center text-green-600 text-2xl"
+                >
+                  💲
+                </div>
+
+                <div>
+                  <p class="text-gray-400 text-[14px]">Total Sales</p>
+
+                  <h2 class="text-[34px] font-bold">$0.00</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-[55px] h-[55px] rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 text-2xl"
+                >
+                  🛒
+                </div>
+
+                <div>
+                  <p class="text-gray-400 text-[14px]">Total Orders</p>
+
+                  <h2 class="text-[34px] font-bold">0</h2>
+                </div>
+              </div>
+            </div>
+            <!-- CARD -->
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-[55px] h-[55px] rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 text-2xl"
+                >
+                  👥
+                </div>
+
+                <div>
+                  <p class="text-gray-400 text-[14px]">Customers</p>
+
+                  <h2 class="text-[34px] font-bold">1</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-[55px] h-[55px] rounded-xl bg-red-100 flex items-center justify-center text-red-600 text-2xl"
+                >
+                  ⚠️
+                </div>
+
+                <div>
+                  <p class="text-gray-400 text-[14px]">Low Stock Items</p>
+
+                  <h2 class="text-[34px] font-bold">0</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RECENT ORDERS -->
+          <div class="bg-white rounded-xl mt-8 shadow-sm overflow-hidden">
+            <!-- HEADER -->
+            <div class="flex items-center justify-between px-6 py-5 border-b">
+              <h2 class="text-[20px] font-semibold text-gray-800">
+                Recent Orders
+              </h2>
+
+              <a href="#" class="text-pink-500 text-[14px] font-medium">
+                View all »
+              </a>
+            </div>
+
+            <!-- TABLE -->
+            <div class="overflow-y-auto">
+              <table class="w-full min-w-[900px]">
+                <thead class="bg-gray-50">
+                  <tr class="text-gray-500 text-[14px]">
+                    <th class="text-left px-6 py-4 font-semibold">ORDER ID</th>
+
+                    <th class="text-left px-6 py-4 font-semibold">CUSTOMER</th>
+
+                    <th class="text-left px-6 py-4 font-semibold">DATE</th>
+
+                    <th class="text-left px-6 py-4 font-semibold">TOTAL</th>
+
+                    <th class="text-left px-6 py-4 font-semibold">STATUS</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- MOBILE OVERLAY -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 hidden lg:hidden"></div>
+
+    <!-- SCRIPT -->
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const btn = document.getElementById("btn");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        overlay.classList.toggle("hidden");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      });
+
+      btn.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");  
+      });
+    </script>
+  </body>
+</html>
